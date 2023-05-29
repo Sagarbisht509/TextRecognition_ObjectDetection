@@ -71,11 +71,9 @@ class ObjectDetectActivity : AppCompatActivity() {
                             val boundingBox = detectedObject.boundingBox
                             val trackingId = detectedObject.trackingId
                             for (label in detectedObject.labels) {
-                                /*val index = label.index
-                                if (PredefinedCategory.FOOD_INDEX == index) {
-
-                                }*/
                                 val text = label.text
+                                val index = label.index
+                                val confidence = label.confidence
                                 if (PredefinedCategory.FOOD == text) {
                                     objects = text + "\n"
                                 }

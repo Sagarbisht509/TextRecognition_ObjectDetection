@@ -1,16 +1,10 @@
 package com.example.textrecognizer
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.textrecognizer.databinding.ActivityMainBinding
-import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
-import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val splashScreen = installSplashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,6 +25,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.objectDetect.setOnClickListener {
             intent = Intent(this, ObjectDetectActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.digitalInk.setOnClickListener {
+            intent = Intent(this, DigitalInkActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.realtimeObjectDetect.setOnClickListener {
+            intent = Intent(this, RealtimeObjectDetectionActivity::class.java)
             startActivity(intent)
         }
     }

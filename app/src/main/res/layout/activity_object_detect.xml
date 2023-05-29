@@ -34,5 +34,4 @@
         android:src="@drawable/ic_image"
         android:contentDescription="select image" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

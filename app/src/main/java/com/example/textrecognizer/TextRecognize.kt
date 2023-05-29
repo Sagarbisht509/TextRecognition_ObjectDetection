@@ -66,5 +66,4 @@ class TextRecognize : AppCompatActivity() {
             Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
-
 }
